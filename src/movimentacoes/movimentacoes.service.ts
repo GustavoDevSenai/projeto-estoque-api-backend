@@ -24,7 +24,7 @@ export class MovimentacaoService {
       throw new NotFoundException(`Produto com id ${produtoId} não encontrado`);
     }
 
-    if (tipo === TipoMovimentacao.SAIDA) {
+    if (tipo === TipoMovimentacao.saida) {
       if (produto.estoque < quantidade) {
         throw new BadRequestException(
           `Estoque insuficiente. Disponível: ${produto.estoque}, solicitado: ${quantidade}`,

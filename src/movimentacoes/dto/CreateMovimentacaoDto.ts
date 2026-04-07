@@ -2,7 +2,7 @@ import { IsDateString, IsEnum, IsInt, IsNotEmpty, IsPositive } from 'class-valid
 
 export enum TipoMovimentacao {
   ENTRADA = 'entrada',
-  SAIDA = 'saida',
+  saida = 'saida',
 }
 
 export class CreateMovimentacaoDto {

@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProdutosModule } from './produtos/produtos.module';
 import { MovimentacaoModule } from './movimentacoes/movimentacoes.module';
+import { AuthModule } from './auth/auth.module';
 
  
 @Module({
@@ -16,7 +17,7 @@ import { MovimentacaoModule } from './movimentacoes/movimentacoes.module';
     database:'estoque_db',
     autoLoadEntities:true,
     synchronize:true
-  }), ProdutosModule, MovimentacaoModule],
+  }), ProdutosModule, MovimentacaoModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
