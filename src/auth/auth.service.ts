@@ -31,7 +31,7 @@ export class AuthService {
         const usuario = await this.usuarioRepository.findOneBy({email})
         if(!usuario) throw new UnauthorizedException("Credenciais Invalidas!")
         //comparar a senha informada do usuario com a senha cadastrada no banco
-        const senhaValida = await bcrypt.compare(senha, usuario.email)
+        const senhaValida = await bcrypt.compare(senha, usuario.senha)
         if(!senhaValida) throw new UnauthorizedException("Credenciais invalidas")
 
         const payload = {sub: usuario.id, email: usuario.email}
